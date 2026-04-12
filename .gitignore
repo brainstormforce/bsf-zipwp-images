@@ -1,0 +1,22 @@
+# Dependency directories
+vendor/
+node_modules/
+
+# Logs
+*.log
+
+# Grunt intermediate storage (https://gruntjs.com/creating-plugins#storing-task-files)
+.grunt
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Claude Code local settings (developer-specific overrides)
+.claude/settings.local.json
+
+# Other
+*.zip
+.DS_Store
