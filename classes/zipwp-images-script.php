@@ -135,28 +135,7 @@ class Zipwp_Images_Script {
 
 		// Enqueue CSS.
 		wp_enqueue_style( 'zipwp-images-style', ZIPWP_IMAGES_URL . 'dist/style-main.css', array(), ZIPWP_IMAGES_VER );
-		wp_enqueue_style( 'zipwp-images-google-fonts', $this->google_fonts_url(), array(), 'all' );
-	}
-
-	/**
-	 * Generate and return the Google fonts url.
-	 *
-	 * @since 1.0.0
-	 * @return string
-	 */
-	public function google_fonts_url() {
-
-		$fonts_url     = '';
-		$font_families = array(
-			'Figtree:400,500,600,700',
-		);
-
-		$query_args = array(
-			'family' => rawurlencode( implode( '|', $font_families ) ),
-			'subset' => rawurlencode( 'latin,latin-ext' ),
-		);
-
-		return add_query_arg( $query_args, '//fonts.googleapis.com/css' );
+		wp_enqueue_style( 'zipwp-images-fonts', ZIPWP_IMAGES_URL . 'assets/fonts/figtree.css', array(), ZIPWP_IMAGES_VER );
 	}
 
 	/**
