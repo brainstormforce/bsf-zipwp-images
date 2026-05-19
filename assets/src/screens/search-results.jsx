@@ -163,8 +163,7 @@ const SearchResults = () => {
 				signal: abortController.signal,
 			} );
 
-			const newImages =
-				response.success && response?.data ? response.data?.data : [];
+			const newImages = response?.data || [];
 
 			setImages( ( prev ) => [ ...prev, ...newImages ] );
 			if ( newImages.length < PER_PAGE ) {
