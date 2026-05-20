@@ -122,9 +122,9 @@ class Zipwp_Images_Api {
 							'sanitize_callback' => 'sanitize_text_field',
 						),
 						'per_page'    => array(
-							'type'              => 'string',
+							'type'              => 'integer',
 							'required'          => false,
-							'sanitize_callback' => 'sanitize_text_field',
+							'sanitize_callback' => 'absint',
 						),
 						'page'        => array(
 							'type'              => 'string',
@@ -219,7 +219,7 @@ class Zipwp_Images_Api {
 		if ( is_wp_error( $response ) ) {
 			return new \WP_Error(
 				'remote_request_failed',
-				'Failed ' . $response->get_error_message(),
+				__( 'Remote request failed.', 'zipwp-images' ),
 				array( 'status' => 500 )
 			);
 		}
